@@ -1,6 +1,10 @@
 
   <h3> Title: <%= @job.title %></h3>
   <p> Description: <%= @job.description %></p>
+  <h4> Location: <%= @job.location %></h4>
+  <h4> Date Posted: <%= @job.date_posted %></h4>
+  <h4> Skill Level: <%= @job.skill_level %></h4>
+  <h4> Employment Type: <%= @job.employment_type %></h4>
   <h5><%= link_to "Edit Posting", edit_job_path(@job)%></h5>
   <h5><%= link_to "Delete Posting", @job, method: :delete %></h5>
 
