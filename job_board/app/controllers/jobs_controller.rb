@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.all
+    @jobs = Job.order(sort_column + ' ' + sort_direction)
+
   end
   def new
     @job = Job.new
@@ -29,5 +30,14 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:title, :description, :location, :date_posted, :skill_level, :employment_type)
+  end
+
+  private
+  def sort_column
+    Job.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

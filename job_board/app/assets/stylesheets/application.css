@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.pretty th .asc { 
+  background-image: url(up_arrow.png); 
+}
+
+.pretty th .desc { 
+  background-image: url(down_arrow.png); 
+}
