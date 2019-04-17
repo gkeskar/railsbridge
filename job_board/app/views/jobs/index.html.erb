@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sort a HTML Table Alphabetically</title>
+<title>Jobs Index Page</title>
 <style>
 table {
   border-spacing: 0;
@@ -19,24 +19,11 @@ tr:nth-child(even) {
   background-color: #f2f2f2
 }
 
-.pretty th .current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-.pretty th .asc { 
-  background-image: url(/assets/images/up_arrow.png); 
-}
-
-.pretty th .desc { 
-  background-image: url(/assets/images/down_arrow.png); 
-}
-
 </style>
 </head>
 <body>
 <h1>RailsBridgeCorp Open Jobs</h1>
-<table id="myTable">
+<table class="mytable">
   <tr>
     <th><%= sortable "title", "Job Title" %></th>
     <th><%= sortable "location" %></th>
@@ -49,7 +36,6 @@ tr:nth-child(even) {
     <td><%=  job.date_posted %> </td>
   </tr>
   <% end %> 
-</table>  
-
+</table>
 </body>
 </html>
