@@ -1,9 +1,14 @@
 class JobsController < ApplicationController
   helper_method :sort_column, :sort_direction
   def index
-    @jobs = Job.order(sort_column + ' ' + sort_direction)
-
+    if params[:tag]
+      @jobs = Job.tagged_with_id(params[:tag])
+      puts params
+    else
+      @jobs = Job.order(sort_column + ' ' + sort_direction)
+    end
   end
+
   def new
     @job = Job.new
   end
@@ -30,7 +35,7 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:title, :description, :location, :date_posted, :skill_level, :employment_type)
+    params.require(:job).permit(:title, :description, :location, :date_posted, :skill_level, :employment_type, :tag_list)
   end
 
   private

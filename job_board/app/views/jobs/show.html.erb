@@ -5,6 +5,20 @@
   <h4> Date Posted: <%= @job.date_posted %></h4>
   <h4> Skill Level: <%= @job.skill_level %></h4>
   <h4> Employment Type: <%= @job.employment_type %></h4>
+  <h4> Tags: <%= @job.tag_list %></h4>
+
+
+  <p>
+  Tags:
+  <% @job.tags.each do |tag| %>
+     
+     <%= puts "***********"
+     puts tag %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+  </p>
+
+
+
   <h5><%= link_to "Edit Posting", edit_job_path(@job)%></h5>
   <h5><%= link_to "Delete Posting", @job, method: :delete %></h5>
-
