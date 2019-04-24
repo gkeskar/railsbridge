@@ -28,13 +28,23 @@ tr:nth-child(even) {
     <th><%= sortable "title", "Job Title" %></th>
     <th><%= sortable "location" %></th>
     <th><%= sortable "date_posted", "Date Posted" %></th>
+    <th><%= sortable "tags", "Tags" %></th>
   </tr>
-  <% @jobs.each do |job| %>
+  <% @jobs.each do |job| %>   
   <tr>
     <td><%= link_to job.title, job_path(job) %> </td>
     <td><%=  job.location %> </td>
-    <td><%=  job.date_posted %> </td>
-  </tr>
+    <td><%=  job.date_posted %> </td> 
+    <% if job.tags.blank? %>
+      <td> NA </td>
+    <% else %>
+       <td> 
+        <% job.tags.each do |tag| %>
+           <%= link_to tag.name, tag_path(tag) %> 
+        <% end %>
+        </td>    
+      <% end %>
+  </tr>   
   <% end %> 
 </table>
 </body>
