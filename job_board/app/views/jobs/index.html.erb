@@ -3,26 +3,9 @@
 <html>
 <head>
 <title>Jobs Index Page</title>
-<style>
-table {
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
-
-th, td {
-  text-align: left;
-  padding: 16px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2
-}
-
-</style>
 </head>
 <body>
-<h1>RailsBridgeCorp Open Jobs</h1>
+<h1 class="page-header">RailsBridgeCorp Open Jobs</h1>
 <table class="mytable">
   <tr>
     <th><%= sortable "title", "Job Title" %></th>
@@ -47,5 +30,6 @@ tr:nth-child(even) {
   </tr>   
   <% end %> 
 </table>
+<footer>Job Board Portal by <cite title="Rails Bridge">Rails Bridge</cite></footer>
 </body>
 </html>
