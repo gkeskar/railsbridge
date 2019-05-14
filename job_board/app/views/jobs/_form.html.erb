@@ -1,42 +1,42 @@
 <%= form_for(@job, html: {class: 'form-horizontal'}) do |f| %>
   <div class="form-group">
-    <%= f.label :title, class: 'col-sm-2 control-label' %>
+    <%= f.label :title, class:'col-sm-2 control-label' %>
     <div class="col-sm-10">
-    <%= f.text_field :title, class: 'form-control',class:"form-control" %>
+    <%= f.text_field :title, class:'form-control',class:"form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :description,class: 'col-sm-2 control-label' %>
+    <%= f.label :description,class:'col-sm-2 control-label' %>
     <div class="col-sm-10">
     <%= f.text_field :description, size: '60x6',class:"form-control" %>
   </div>
   </div>
   <div class="form-group">
-    <%= f.label :location , class: 'col-sm-2 control-label' %>
+    <%= f.label :location , class:'col-sm-2 control-label' %>
     <div class="col-sm-10">
     <%= f.text_field :location,class:"form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :date_posted, class: 'col-sm-2 control-label' %>
+    <%= f.label :date_posted, class:'col-sm-2 control-label' %>
     <div class="col-sm-10">
     <%= f.text_field :date_posted,class:"form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :skill_level, class: 'col-sm-2 control-label' %>
+    <%= f.label :skill_level, class:'col-sm-2 control-label' %>
     <div class="col-sm-10">
       <%= f.text_field :skill_level,class:"form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :employment_type, class: 'col-sm-2 control-label' %>
+    <%= f.label :employment_type, class:'col-sm-2 control-label' %>
     <div class="col-sm-10">
       <%= f.text_field :employment_type, class:"form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :tag_list, "Tags (sepearated by commas)",class: 'col-sm-2 control-label' %>
+    <%= f.label :tag_list, "Tags (sepearated by commas)",class:'col-sm-2 control-label' %>
     <div class="col-sm-10">
       <%= f.text_field :tag_list,class:"form-control" %>
     </div>

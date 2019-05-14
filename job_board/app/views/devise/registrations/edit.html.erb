@@ -9,7 +9,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control" %>
     </div>
   </div>
-  <br>
+  <br/> <br/>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -37,12 +37,13 @@
     <%= f.password_field :current_password, autocomplete: "current-password",class:"form-control" %>
     </div>
   </div>
-
+  <br/><br/>
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary btn-lg">Update</button>
-    </div>
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary btn-lg">Update</button>
+      </div>
   </div>
+
 </form>
 <% end %>
 
