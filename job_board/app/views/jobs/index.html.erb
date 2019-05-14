@@ -13,23 +13,27 @@
     <th><%= sortable "date_posted", "Date Posted" %></th>
     <th><%= sortable "tags", "Tags" %></th>
   </tr>
-  <% @jobs.each do |job| %>   
+  <% @jobs.each do |job| %>
   <tr>
-    <td><%= link_to job.title, job_path(job) %> </td>
+    <td><%= link_to job.title, job_path(job), class: 'btn btn-info btn-sm' %> </td>
     <td><%=  job.location %> </td>
-    <td><%=  job.date_posted %> </td> 
+    <td><%=  job.date_posted %> </td>
     <% if job.tags.blank? %>
       <td> NA </td>
     <% else %>
-       <td> 
+       <td>
         <% job.tags.each do |tag| %>
-           <%= link_to tag.name, tag_path(tag) %> 
+           <%= link_to tag.name, tag_path(tag) %>
         <% end %>
-        </td>    
+        </td>
       <% end %>
-  </tr>   
-  <% end %> 
+  </tr>
+  <% end %>
 </table>
+<%= link_to new_job_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> New Job
+<% end %>
+
 <footer>Job Board Portal by <cite title="Rails Bridge">Rails Bridge</cite></footer>
 </body>
 </html>

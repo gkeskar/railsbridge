@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!
   helper_method :sort_column, :sort_direction
   def index
     if params[:tag]
@@ -26,7 +27,7 @@ class JobsController < ApplicationController
   end
   def show
     @job = Job.find(params[:id])
-    
+
   end
   def destroy
     @job = Job.find(params[:id])
